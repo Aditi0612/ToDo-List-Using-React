@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 
 export default function Header(props) {
   return (
@@ -27,5 +29,24 @@ export default function Header(props) {
   )
 }
 
+//Default Props----By default we give this value to title if user doesn't 
+//pass a title
+
+Header.defaultProps={
+  title: "Your Title Here",
+  searchbar: true
+}
+
+
+//we need to keep title as string. Helps in finding bugs.
+//It gives warning whenever string is not used in title or
+//bool as searchBar
+//isRequired--means mandatory to pass something on user end
+Header.propTypes ={
+  title: PropTypes.string,
+  searchbar: PropTypes.bool.isRequired
+}
+
 
 //props- Javascript object passed from parent component to child component
+
